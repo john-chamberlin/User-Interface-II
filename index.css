@@ -13,7 +13,6 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-	border: 0;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
@@ -45,6 +44,11 @@ table {
 
 *{
     font-family:sans-serif;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+html{
+    font-size: 62.5%;
 }
 
 
@@ -61,7 +65,7 @@ table {
 
 h1{
     margin-left:5%;
-    font-size:4rem;
+    font-size:6rem;
 }
 
 nav{
@@ -76,6 +80,7 @@ nav a{
     text-decoration: none;
     padding:1%;
     color:black;
+    font-size: 2rem;
 }
 
 
@@ -104,27 +109,26 @@ nav a{
 }
 
 h2{
-    font-size: 4rem;
+    font-size: 5rem;
 }
 
 #projects{
-    font-size:2rem;
+    font-size:3rem;
     width:20%;
     background-color: #DCD6f7;
 }
 
 p{
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 .gallery{
-    height:60rem;
-
+    height:70vh;
     display:flex;
     flex-flow:column wrap;
     justify-content: space-evenly;
     align-content: space-between;
-    padding:2rem;
+    padding: 0% 2rem 0% 2rem;
 }
 
 footer{
@@ -139,17 +143,100 @@ footer{
 }
 
 h3{
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom:2rem;
 }
 
 #contact{
-    font-size:2rem;
+    font-size:3rem;
     background-color: #fff3b0;
     
 }
 
 .coolor{
-    background-color: #FFF3B0;
+    background-color: #fff3b0;
 }
+/* Media Quieries Start Here */
+@media(max-width:800px){
 
+    .header{
+        align-items: center;
+        height:25vh;
+    }
+    h1{
+        margin:0;
+    }
+    nav{
+        flex-direction: column;
+        margin:0;
+        width:20rem;
+    }
+    nav a{
+        font-size: 3rem;
+        padding:1rem;
+        width: 100%;
+        text-align: center;
+    
+    }
+    .overview{
+        flex-direction: column;
+    }
+    #mainimg{
+        width:95%
+    }
+    .overviewtext{
+        flex-direction: column;
+        align-items: center;
+        height:30vh;
+        max-width: 90%;
+        justify-content: space-between;
+    }
+    #projects{
+        width:20rem;
+        padding:2%;
+    }
+    .gallery{
+        height: 120vh;
+        min-width: 100%;
+        align-content:space-between;
+        align-items: center;
+    }
+    .gallery img{
+        max-width: 40%;
+    }
+    .gallery img:nth-of-type(7){
+        display:none;
+    }
+    .gallery img:nth-of-type(8){
+        display:none;
+    }
+    .gallery p{
+        margin-bottom: 8rem;
+    }
+    .gallery p:nth-of-type(7){
+        display:none;
+    }
+    .gallery p:nth-of-type(8){
+        display:none;
+    }
+    footer{
+        height:20vh
+    }
+}/*800 quierie closes here*/
+@media(max-width:500px){
+    .overview{
+        height:50vh;
+        justify-content: center;
+    }    
+    .overviewtext{
+        height:30vh;
+        text-align: center;
+        justify-content: space-evenly;
+    }
+    .overviewtext p{
+        font-size: 3rem;
+    }
+    .gallery{
+        height:80vh;
+    }
+}/*500 quierie ends here*/
